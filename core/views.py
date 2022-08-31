@@ -2,6 +2,22 @@ from django.shortcuts import render, redirect
 from .models import Curso, Instituicao, Usuario
 from .forms import CursoForm, InstituicaoForm, UsuarioForm
 
+#Links para as páginas
+
+def index(request):
+    return render(request, "index.html")
+    
+def cursos(request):
+    return render(request, "cursos.html")
+
+def instituicao(request):
+    return render(request, "instituicoes.html")
+
+def usuario(request):
+    return render(request, "usuarios.html")
+
+#Funçoes de cursos
+
 def listar_cursos(request):
     
     cursos = Curso.objects.all()
@@ -45,7 +61,7 @@ def remover_curso(request, id):
         return redirect('listar_cursos')
 
  
-
+#Funcoes Usuarios
 
 
 def listar_usuarios(request):
@@ -57,16 +73,6 @@ def listar_usuarios(request):
 
     return render(request, 'usuarios.html', contexto)
 
-def cadastrar_usuarios(request):
-    form = UsuarioForm(request.POST or None)
-
-    if form.is_valid():
-        form.save()
-        return redirect('listar_usuarios')
-
-    contexto = {
-    'form_usuario' : form
-    }
 
 def cadastrar_usuario(request):
     form = UsuarioForm(request.POST or None)
@@ -101,9 +107,7 @@ def remover_usuario(request, id):
         return redirect('listar_usuario')
 
 
-
-
-
+#Funcoes das Insituiçoes
 
 
 def listar_instituicoes(request):
@@ -127,6 +131,9 @@ def cadastrar_instituicao(request):
     contexto = {
     'form_instituicoes' : form
     }
+    return render(request, 'cadastrar_instituicao.html', contexto)
+
+
 
 def cadastrar_instituicao(request):
     form = InstituicaoForm(request.POST or None)

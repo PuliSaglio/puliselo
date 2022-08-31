@@ -12,11 +12,11 @@ class CursoForm(ModelForm):
 class UsuarioForm(ModelForm):
     class Meta:
         model = Usuario
-        fields = ['titulo', 'vagas']
+        fields = ['nome_user', 'cpf', 'email', 'foto']
 
     ''''''''
 
 class InstituicaoForm(ModelForm):
     class Meta:
         model = Instituicao
-        fields = ['titulo', 'vagas']
+        fields = ['nome_instituicao', 'cnpj', 'telefone']

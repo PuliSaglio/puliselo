@@ -9,14 +9,14 @@ class Curso(models.Model):
 
 
 class Usuario(models.Model):
-    nome_user = models.CharField("Nome de Usuario", max_length=100)
+    nome_user = models.CharField("Nome", max_length=100)
     cpf = models.CharField("CPF", max_length=11)
     email = models.CharField("Email" , max_length=100)
-    foto = models.ImageField("Icone Usuario")
+    foto = models.ImageField("Imagem de Perfil")
 
 
 
 class Instituicao(models.Model):
-    nome_instituicao = models.CharField("Nome da Instituição", max_length=100)
-    cnpj = models.CharField("CNPJ" , max_length=14)
+    nome_instituicao = models.CharField("Nome da Instituição", max_length=40)
+    cnpj = models.CharField("CNPJ", max_length=14)
     telefone = models.IntegerField("Telefone")

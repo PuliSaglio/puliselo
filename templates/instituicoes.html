@@ -34,10 +34,11 @@
     {% for instituicao in instituicoes %}
 
     <p>
-        Nome da Instituição: {{instituicao.titulo}}
-        Vagas: {{instituicao.vagas}}
-        <a href="{% url 'editar_instituicoes' instituicao.id %}">EDITAR</a>
-        <a href="{% url 'remover_instituicoes' instituicao.id %}">REMOVER</a>
+        Nome da Instituição: {{instituicao.nome_instituicao}}
+        CNPJ: {{instituicao.cnpj}}
+        Telefone {{instituicao.telefone}}
+        <a href="{% url 'editar_instituicao' instituicao.id %}">EDITAR</a>
+        <a href="{% url 'remover_instituicao' instituicao.id %}">REMOVER</a>
     </p>
 
     {% empty %}

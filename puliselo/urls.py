@@ -16,14 +16,22 @@ Including another URLconf
 from unicodedata import name
 from django.contrib import admin
 from django.urls import path
-from core.views import listar_cursos, cadastrar_curso, editar_curso, remover_curso
+from core.views import cadastrar_instituicao, cadastrar_usuarios, editar_instituicao, editar_usuario, listar_cursos, cadastrar_curso, editar_curso, listar_instituicoes, listar_usuarios, remover_curso, remover_instituicao, remover_usuario
 
 urlpatterns = [
-    path('cursos/', listar_cursos, name='listar_cursos'), 
     path('admin/', admin.site.urls),
+    path('cursos/', listar_cursos, name='listar_cursos'),
     path('cadastrar/', cadastrar_curso, name='cadastrar_curso'), 
     path('curso_editar/<int:id>/', editar_curso, name='editar_curso'),
     path('curso_remover/<int:id>/', remover_curso, name='remover_curso'),
+    path('usuarios/', listar_usuarios, name='listar_usuario'), 
+    path('cadastrar_usuario/', cadastrar_usuarios, name='cadastrar_usuario'), 
+    path('usuario_editar/<int:id>/', editar_usuario, name='editar_usuario'),
+    path('usuario_remover/<int:id>/', remover_usuario, name='remover_usuario'),
+    path('instituicoes/', listar_instituicoes, name='listar_instituicoes'), 
+    path('cadastrar_instituicao/', cadastrar_instituicao, name='cadastrar_instituicoes'),
+    path('instituicao_editar/<int:id>/', editar_instituicao, name='editar_instituicao'),
+    path('instituicao_remover/<int:id>/', remover_instituicao, name='remover_instituicao'), 
     ]
 
     

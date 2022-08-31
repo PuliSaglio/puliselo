@@ -20,7 +20,7 @@ from core import views
 from core.views import cadastrar_instituicao, cadastrar_usuario, editar_instituicao, editar_usuario, listar_cursos, cadastrar_curso, editar_curso, listar_instituicoes, listar_usuarios, remover_curso, remover_instituicao, remover_usuario
 
 urlpatterns = [
-    #path('' , views.index),
+    path('' , views.index),
     #path('instituicoes/' , views.instituicao, name='instituicao'),
     #path('cursos/' , views.cursos, name='cursos'),
    #path('usuarios/' , views.usuario, name='usuario'),

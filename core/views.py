@@ -142,7 +142,7 @@ def editar_instituicao(request, id):
             return redirect('listar_instituicoes')
 
         contexto = {
-            'form_instituicao': form
+            'form_instituicoes': form
         }
 
         return render(request, 'cadastrar_instituicao.html', contexto)

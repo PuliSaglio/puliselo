@@ -1,3 +1,4 @@
+from distutils.command.upload import upload
 from django.db import models
 
 
@@ -12,9 +13,9 @@ class Usuario(models.Model):
     nome_user = models.CharField("Nome", max_length=100)
     cpf = models.CharField("CPF", max_length=11)
     email = models.CharField("Email" , max_length=100)
-    foto = models.ImageField("Imagem de Perfil")
+    foto = models.ImageField(upload_to='images/', null=True, blank=True)
 
-
+     
 
 class Instituicao(models.Model):
     nome_instituicao = models.CharField("Instituição", max_length=40)

@@ -28,8 +28,10 @@
     {% for usuario in usuarios %}
 
     <p>
-        Titulo: {{usuario.titulo}}
-        Vagas: {{usuario.vagas}}
+        Nome: {{usuario.nome_user}}
+        CPF: {{usuario.cpf}}
+        Email: {{usuario.email}}
+        Foto: {{usuario.foto}}
         <a href="{% url 'editar_usuario' usuario.id %}">EDITAR</a>
         <a href="{% url 'remover_usuario' usuario.id %}">REMOVER</a>
     </p>

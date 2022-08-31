@@ -1,6 +1,26 @@
+from django.http import HttpResponse
+from .forms import *
 from django.shortcuts import render, redirect
 from .models import Curso, Instituicao, Usuario
 from .forms import CursoForm, InstituicaoForm, UsuarioForm
+
+#upload de img
+def hotel_image_view(request):
+  
+    if request.method == 'POST':
+        form = HotelForm(request.POST, request.FILES)
+  
+        if form.is_valid():
+            form.save()
+            return redirect('success')
+    else:
+        form = HotelForm()
+    return render(request, 'hotel_image_form.html', {'form' : form})
+  
+  
+def success(request):
+    return HttpResponse('successfully uploaded')
+
 
 #Links para as páginas
 
@@ -75,11 +95,11 @@ def listar_usuarios(request):
 
 
 def cadastrar_usuario(request):
-    form = UsuarioForm(request.POST or None)
+    form = UsuarioForm(request.POST, request.FILES or None)
 
     if form.is_valid():
         form.save()
-        return redirect('listar_usuarios')
+        return redirect('listar_usuario')
 
     contexto = {
     'form_usuario' : form

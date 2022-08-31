@@ -165,4 +165,4 @@ def editar_instituicao(request, id):
 def remover_instituicao(request, id):
         instituicao = Instituicao.objects.get(pk=id)
         instituicao.delete()
-        return redirect('listar_instituicao')
+        return redirect('listar_instituicoes')

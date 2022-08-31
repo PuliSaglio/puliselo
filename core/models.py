@@ -17,6 +17,6 @@ class Usuario(models.Model):
 
 
 class Instituicao(models.Model):
-    nome_instituicao = models.CharField("Nome da Instituição", max_length=40)
+    nome_instituicao = models.CharField("Instituição", max_length=40)
     cnpj = models.CharField("CNPJ", max_length=14)
     telefone = models.IntegerField("Telefone")

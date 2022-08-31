@@ -21,11 +21,6 @@ from core.views import cadastrar_instituicao, cadastrar_usuario, editar_institui
 
 urlpatterns = [
     path('' , views.index),
-    #path('instituicoes/' , views.instituicao, name='instituicao'),
-    #path('cursos/' , views.cursos, name='cursos'),
-   #path('usuarios/' , views.usuario, name='usuario'),
-   #path('admin/', admin.site.urls),
-    
     path('cursos/', listar_cursos, name='listar_cursos'),
     path('cadastrar_curso/', cadastrar_curso, name='cadastrar_curso'), 
     path('editar_curso/<int:id>/', editar_curso, name='editar_curso'),

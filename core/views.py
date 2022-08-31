@@ -133,21 +133,6 @@ def cadastrar_instituicao(request):
     }
     return render(request, 'cadastrar_instituicao.html', contexto)
 
-
-
-def cadastrar_instituicao(request):
-    form = InstituicaoForm(request.POST or None)
-
-    if form.is_valid():
-        form.save()
-        return redirect('listar_instituicoes')
-
-    contexto = {
-    'form_instituicoes' : form
-    }
-
-    return render(request, 'cadastrar_instituicao.html', contexto)
-
 def editar_instituicao(request, id):
         instituicao = Instituicao.objects.get(pk=id)
 

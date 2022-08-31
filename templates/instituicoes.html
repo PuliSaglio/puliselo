@@ -23,18 +23,13 @@
         }
       </style>
 
-
-
-
-
-
     <h1>Instituições</h1>
     <a href="{% url 'cadastrar_instituicoes' %}">CADASTRAR</a>
     <p>Lista de Instituições:</p>
     {% for instituicao in instituicoes %}
 
     <p>
-        Nome da Instituição: {{instituicao.nome_instituicao}}
+        Instituição: {{instituicao.nome_instituicao}}
         CNPJ: {{instituicao.cnpj}}
         Telefone {{instituicao.telefone}}
         <a href="{% url 'editar_instituicao' instituicao.id %}">EDITAR</a>

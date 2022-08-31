@@ -1,4 +1,4 @@
-"""banco_03 URL Configuration
+"""puliselo URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.0/topics/http/urls/
@@ -25,10 +25,11 @@ urlpatterns = [
     path('cursos/' , views.cursos, name='cursos'),
     path('usuarios/' , views.usuario, name='usuario'),
     path('admin/', admin.site.urls),
+    
     path('cursos/', listar_cursos, name='listar_cursos'),
-    path('cadastrar/', cadastrar_curso, name='cadastrar_curso'), 
-    path('curso_editar/<int:id>/', editar_curso, name='editar_curso'),
-    path('curso_remover/<int:id>/', remover_curso, name='remover_curso'),
+    path('cadastrar_curso/', cadastrar_curso, name='cadastrar_curso'), 
+    path('editar_curso/<int:id>/', editar_curso, name='editar_curso'),
+    path('remover_curso/<int:id>/', remover_curso, name='remover_curso'),
     path('usuarios/', listar_usuarios, name='listar_usuario'), 
     path('cadastrar_usuario/', cadastrar_usuario, name='cadastrar_usuario'), 
     path('usuario_editar/<int:id>/', editar_usuario, name='editar_usuario'),

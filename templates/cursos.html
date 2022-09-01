@@ -20,19 +20,41 @@
         margin-top: 50px;
         padding: 10px;
         text-align: center;
+        border: 1px solid rgb(0, 0, 0);
+        background-color: rgb(205, 205, 255);
+        }
+        .cadastrados{
+        border: 1px solid rgb(0, 0, 0);
+        width: auto;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+        width: 200px;
+        }
+        .img{
+        margin-left: 5px;
+        }
+        a{
+            text-decoration: none;
         }
       </style>
 
-    <h1>Cursos</h1>
-    <a href="{% url 'cadastrar_curso' %}">CADASTRAR</a>
+    <h1>CURSOS</h1>
+    <a href="{% url 'cadastrar_curso' %}">
+    <img src="https://cdn-icons-png.flaticon.com/512/7170/7170178.png"
+    width="30px">CADASTRAR</a>
     <p>Lista de Cursos:</p>
     {% for curso in cursos %}
 
-    <p>
-        Titulo: {{curso.titulo}}
-        Vagas: {{curso.vagas}}
-        <a href="{% url 'editar_curso' curso.id %}">EDITAR</a>
-        <a href="{% url 'remover_curso' curso.id %}">REMOVER</a>
+    <p class="cadastrados">
+        CURSO: {{curso.titulo}}<br>
+        VAGAS: {{curso.vagas}}
+        <a href="{% url 'editar_curso' curso.id %}">
+        <img title="EDITAR" src="https://cdn-icons-png.flaticon.com/512/6841/6841733.png"width="25px">
+        </a>
+
+        <a href="{% url 'remover_curso' curso.id %}">
+        <img title="REMOVER" src="https://cdn-icons-png.flaticon.com/512/561/561240.png"width="25px"></a>
     </p>
 
     {% empty %}

@@ -20,20 +20,40 @@
         margin-top: 50px;
         padding: 10px;
         text-align: center;
+        border: 1px solid rgb(0, 0, 0);
+        background-color: rgb(205, 205, 255);
+        }
+        .cadastrados{
+        border: 1px solid rgb(0, 0, 0);
+        width: auto;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+        width: 300px;
+        }
+
+        a{
+            text-decoration: none;
         }
       </style>
 
-    <h1>Instituições</h1>
-    <a href="{% url 'cadastrar_instituicoes' %}">CADASTRAR</a>
+    <h1>INSTITUIÇÕES</h1>
+    <a href="{% url 'cadastrar_instituicoes' %}">
+    <img src="https://cdn-icons-png.flaticon.com/512/7170/7170178.png"
+    width="30px">CADASTRAR</a>
     <p>Lista de Instituições:</p>
     {% for instituicao in instituicoes %}
 
-    <p>
-        Instituição: {{instituicao.nome_instituicao}}
-        CNPJ: {{instituicao.cnpj}}
-        Telefone {{instituicao.telefone}}
-        <a href="{% url 'editar_instituicao' instituicao.id %}">EDITAR</a>
-        <a href="{% url 'remover_instituicao' instituicao.id %}">REMOVER</a>
+    <p class="cadastrados">
+        INSTITUIÇÃO: {{instituicao.nome_instituicao}}<br>
+        CNPJ: {{instituicao.cnpj}}<br>
+        TELEFONE: {{instituicao.telefone}}<br>
+        <a href="{% url 'editar_instituicao' instituicao.id %}">
+        <img title="EDITAR" src="https://cdn-icons-png.flaticon.com/512/6841/6841733.png"width="25px">
+        </a>
+
+        <a href="{% url 'remover_instituicao' instituicao.id %}">
+        <img title="REMOVER" src="https://cdn-icons-png.flaticon.com/512/561/561240.png"width="25px"></a>
     </p>
 
     {% empty %}

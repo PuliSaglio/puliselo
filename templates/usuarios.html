@@ -19,21 +19,41 @@
         margin-top: 50px;
         padding: 10px;
         text-align: center;
+        border: 1px solid rgb(0, 0, 0);
+        background-color: rgb(205, 205, 255);
+        }
+        .cadastrados{
+        border: 1px solid rgb(0, 0, 0);
+        width: auto;
+        height: auto; 
+        margin-left: auto;
+        margin-right: auto;
+        width: 250px;
+        }
+        a{
+            text-decoration: none;
         }
       </style>
 
-    <h1>Usuarios</h1>
-    <a href="{% url 'cadastrar_usuario' %}">CADASTRAR</a>
+    <h1>USUARIOS</h1>
+    <a href="{% url 'cadastrar_usuario' %}">
+    <img src="https://cdn-icons-png.flaticon.com/512/7170/7170178.png"
+    width="30px">CADASTRAR</a>
     <p>Lista de Usuarios:</p>
     {% for usuario in usuarios %}
 
-    <p>
-        Nome: {{usuario.nome_user}}
-        CPF: {{usuario.cpf}}
-        Email: {{usuario.email}}
-        Foto: {{usuario.foto}}
-        <a href="{% url 'editar_usuario' usuario.id %}">EDITAR</a>
-        <a href="{% url 'remover_usuario' usuario.id %}">REMOVER</a>
+    <p class="cadastrados">
+        NOME: {{usuario.nome_user}}<br>
+        CPF: {{usuario.cpf}}<br>
+        EMAIL: {{usuario.email}}<br>
+        foto: {{usuario.foto}}<br>
+        <a href="{% url 'editar_usuario' usuario.id %}">
+        <img title="EDITAR" src="https://cdn-icons-png.flaticon.com/512/6841/6841733.png"width="25px">
+
+
+
+        <a href="{% url 'remover_usuario' usuario.id %}">
+        <img title="REMOVER" src="https://cdn-icons-png.flaticon.com/512/561/561240.png"width="25px"></a>
     </p>
 
     {% empty %}
